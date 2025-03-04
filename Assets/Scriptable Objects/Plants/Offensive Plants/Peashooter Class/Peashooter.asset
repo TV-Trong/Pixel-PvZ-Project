@@ -19,3 +19,4 @@ MonoBehaviour:
   plantType: 1
   plantClass: 0
   plantDisplaySprite: {fileID: 21300000, guid: 3e640fe8d2900004bbecf47d8d723222, type: 3}
+  fireRate: 2

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pea_Projectile : MonoBehaviour
+public class Horizontal_Projectile : MonoBehaviour
 {
     private void Update()
     {

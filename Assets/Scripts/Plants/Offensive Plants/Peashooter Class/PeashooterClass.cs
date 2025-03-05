@@ -22,4 +22,5 @@ public class PeashooterClass : Plant
     public int SunCost { get { return sunCost; } protected set { sunCost = value; } }
     public string PlantName { get { return plantName; } protected set { plantName = value; } }
     public PlantClass PlantClass { get { return plantClass; } protected set { plantClass = value; } }
+    public Sprite PlantDisplaySprite { get { return plantDisplaySprite; } protected set { plantDisplaySprite = value; } }
 }

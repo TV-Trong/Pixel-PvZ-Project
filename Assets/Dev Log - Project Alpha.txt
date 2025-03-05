@@ -1,0 +1,13 @@
+03/03/2025
+	- Started working on the project
+	- Drew some plants (Peashooter, Sunflower, Wallnut, Potato Mine)
+04/03/2025
+	- Drew some more plants (Cherry Bomb, Snow Pea, Repeater, Chomper)
+	- Added Peashooter with working shooting machanism
+	- Adjust camera with pixel perfect
+05/03/2025
+	- Drew sun icon and grass tile (day)
+	- Designed top side layout
+	- Coded grid system
+	- Drew seed selection panel and sun counter
+	- Add pixel font

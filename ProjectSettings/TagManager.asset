@@ -42,3 +42,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Grid
+    uniqueID: 4278614979
+    locked: 0
+  - name: Plant
+    uniqueID: 2503568325
+    locked: 0
+  - name: Zombie
+    uniqueID: 2064680689
+    locked: 0
+  - name: Projectile
+    uniqueID: 2210076857
+    locked: 0
+  - name: Sun
+    uniqueID: 2697733315
+    locked: 0
+  - name: UI
+    uniqueID: 1268411207
+    locked: 0

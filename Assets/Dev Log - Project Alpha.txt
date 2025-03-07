@@ -10,4 +10,13 @@
 	- Designed top side layout
 	- Coded grid system
 	- Drew seed selection panel and sun counter
-	- Add pixel font
+	- Added pixel font
+06/03/2025
+	- Completed top side UI
+07/03/2025
+	- Added choosing plant UI
+	- Drew shovel, menu button
+	- Added new font to use
+	- Change sun counter UI
+	- Added GameManager
+	- Added planting machenism

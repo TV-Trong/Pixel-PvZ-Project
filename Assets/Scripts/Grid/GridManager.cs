@@ -10,8 +10,8 @@ public class GridManager : MonoBehaviour
         return tilemap.WorldToCell(worldPosition);
     }
 
-    public Vector3 GetWorldPosition(Vector3Int gridPosition)
+    public Vector3 GetWorldPosition(Vector3 worldPosition)
     {
-        return tilemap.GetCellCenterWorld(gridPosition);
+        return tilemap.GetCellCenterWorld(GetGridPosition(worldPosition));
     }
 }

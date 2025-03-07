@@ -12,7 +12,7 @@ public class CheckGridPosition : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("Grid Position: " + gridManager.GetGridPosition(Camera.main.ScreenToWorldPoint(Input.mousePosition)));
-            Debug.Log("Plant Position: " + gridManager.GetWorldPosition(gridManager.GetGridPosition(Camera.main.ScreenToWorldPoint(Input.mousePosition))));
+            Debug.Log("Plant Position: " + gridManager.GetWorldPosition(Camera.main.ScreenToWorldPoint(Input.mousePosition)));
         }
     }
 }

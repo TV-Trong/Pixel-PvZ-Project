@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Zombie
+  - PlantHolder
+  - Plant
+  - ZombieHolder
+  - ProjectileHolder
+  - GameManager
   layers:
   - Default
   - TransparentFX

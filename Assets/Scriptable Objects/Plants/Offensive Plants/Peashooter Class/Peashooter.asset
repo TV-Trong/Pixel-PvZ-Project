@@ -18,5 +18,5 @@ MonoBehaviour:
   plantCooldown: 5
   plantType: 1
   plantClass: 0
-  plantDisplaySprite: {fileID: 21300000, guid: 3e640fe8d2900004bbecf47d8d723222, type: 3}
+  plantDisplaySprite: {fileID: 1648130034, guid: d0a219671efee6c46a4535c6a877e195, type: 3}
   fireRate: 2

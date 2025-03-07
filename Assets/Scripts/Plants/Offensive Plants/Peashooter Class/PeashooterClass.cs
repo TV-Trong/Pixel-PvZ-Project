@@ -11,8 +11,9 @@ public class PeashooterClass : Plant
         plantClass = PlantClass.Peashooter;
         plantCooldown = 5f;
         plantHealth = 100;
-        sunCost = 100;
         plantName = "Peashooter";
+        sunCost = 100;
+        fireRate = 2f;
     }
 
     public float FireRate { get { return fireRate; } protected set { fireRate = value; } }

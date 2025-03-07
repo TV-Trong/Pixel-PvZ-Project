@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,9 +8,14 @@ public class GameManager : MonoBehaviour
 
     public GameState gameState; //Change later
 
-    [HideInInspector] public Plant chosenPlant;
-
     [SerializeField] PlantDatabase plantDatabase;
+
+    [SerializeField] int currentSun;
+
+    TextMeshProUGUI sunCounter;
+    Plant chosenPlant;
+    int sunCost;
+    GameObject seedCover;
 
     private void Awake()
     {
@@ -36,7 +40,16 @@ public class GameManager : MonoBehaviour
         }
         else if (gameState == GameState.InGame)
         {
-            
+            sunCounter = GameObject.FindWithTag("SunCounter").GetComponentInChildren<TextMeshProUGUI>();
+
+            if (sunCounter == null)
+            {
+                Debug.LogWarning("Sun Counter not found!");
+                return;
+            }
+
+            sunCounter.text = currentSun.ToString();
+
         }
         else if (gameState == GameState.GameOver)
         {
@@ -44,22 +57,53 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void GetChosenPlant(Plant plant)
+    void StartingSun(int amount) //Call later
+    {
+        currentSun = amount;
+    }
+
+    public void GetChosenPlant(Plant plant, GameObject coverObject)
     {
         chosenPlant = plant;
+        sunCost = plant.SunCost;
+        seedCover = coverObject;
     }
 
     public GameObject GetPlantPrefab()
     {
-        if (chosenPlant != null)
-            return plantDatabase.GetPlantPrefab(chosenPlant.PlantName);
-
-        return null;
+        return plantDatabase.GetPlantPrefab(chosenPlant.PlantName);
     }
 
     public void RemoveChosenPlant()
     {
         chosenPlant = null;
+        sunCost = 0;
+
+        seedCover.SetActive(false);
+        seedCover = null;
+    }
+
+    public bool IsHoldingPlant()
+    {
+        return chosenPlant != null;
+    }
+
+    public bool HaveEnoughSun()
+    {
+        if (currentSun < sunCost)
+        {
+            Debug.LogWarning("Not enough sun!");
+        }
+
+        return currentSun >= sunCost;
+    }
+
+    public void PlantingSuccess()
+    {
+        currentSun -= sunCost;
+        sunCounter.text = currentSun.ToString();
+
+        RemoveChosenPlant();
     }
 }
 

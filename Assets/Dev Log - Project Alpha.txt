@@ -4,19 +4,26 @@
 04/03/2025
 	- Drew some more plants (Cherry Bomb, Snow Pea, Repeater, Chomper)
 	- Added Peashooter with working shooting machanism
-	- Adjust camera with pixel perfect
+	- Adjusted camera with pixel perfect
 05/03/2025
 	- Drew sun icon and grass tile (day)
 	- Designed top side layout
-	- Coded grid system
+	- Added grid system
 	- Drew seed selection panel and sun counter
 	- Added pixel font
-06/03/2025
-	- Completed top side UI
 07/03/2025
+	- Completed top side UI
 	- Added choosing plant UI
 	- Drew shovel, menu button
 	- Added new font to use
-	- Change sun counter UI
+	- Changed sun counter UI
 	- Added GameManager
 	- Added planting machenism
+	- Added lant and sun interaction
+	- Updated grid system to check for valid planting spot
+	- Add Repeater
+To-do next:
+	- Change animation system for more flexibility
+	- Inherit from OffensivePlantTypeA for more plant types
+	- Add pooling system
+	- Animate Reapeater and Snow Pea

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,11 +5,11 @@ using UnityEngine.UI;
 public class PlantChoosing : MonoBehaviour
 {
     [SerializeField] Plant choosenPlant;
-
     [SerializeField] Image displayImage;
     [SerializeField] TextMeshProUGUI sunCostTMP;
+    [SerializeField] GameObject seedCover;
 
-    private void Awake()
+    private void Start()
     {
         SetupPlantUI();
     }
@@ -28,6 +26,7 @@ public class PlantChoosing : MonoBehaviour
 
     void SelectPlant()
     {
-        GameManager.instance.GetChosenPlant(choosenPlant);
+        GameManager.instance.GetChosenPlant(choosenPlant, seedCover);
+        seedCover.SetActive(true);
     }
 }

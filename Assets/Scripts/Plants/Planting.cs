@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Planting : MonoBehaviour
@@ -8,9 +6,9 @@ public class Planting : MonoBehaviour
 
     GameManager gameManager;
 
-    GameObject plantHolder;
+    GameObject plantHolder;//Remove when done
 
-    private void Awake()
+    private void Start()
     {
         gameManager = GameManager.instance;
 
@@ -19,18 +17,30 @@ public class Planting : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (gameManager.IsHoldingPlant())
         {
-            if (gameManager.GetPlantPrefab() == null)
-                return;
+            if (Input.GetMouseButtonDown(0))
+            {
+                GameObject plantPrefab = gameManager.GetPlantPrefab();
 
-            Vector3 plantPosition = gridManager.GetWorldPosition(Camera.main.ScreenToWorldPoint(Input.mousePosition)); // Change to pooling later
+                Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            GameObject newPlant = Instantiate(gameManager.GetPlantPrefab(), plantPosition, Quaternion.identity);
+                if (plantPrefab == null || gridManager.IsGridOccupied(mousePosition) || !gameManager.HaveEnoughSun())
+                    return;
 
-            newPlant.transform.SetParent(plantHolder.transform);
+                GameObject newPlant = Instantiate(plantPrefab, gridManager.GetWorldPosition(mousePosition), Quaternion.identity);// Change to pooling later
 
-            gameManager.RemoveChosenPlant();
+                newPlant.transform.SetParent(plantHolder.transform);//Remove when done
+
+                gridManager.UpdateGrid(mousePosition, true);
+
+                gameManager.PlantingSuccess();
+            }
+
+            if (Input.GetMouseButtonDown(1))
+            {
+                gameManager.RemoveChosenPlant();
+            }
         }
     }
 }

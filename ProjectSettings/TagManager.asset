@@ -10,6 +10,7 @@ TagManager:
   - ZombieHolder
   - ProjectileHolder
   - GameManager
+  - SunCounter
   layers:
   - Default
   - TransparentFX

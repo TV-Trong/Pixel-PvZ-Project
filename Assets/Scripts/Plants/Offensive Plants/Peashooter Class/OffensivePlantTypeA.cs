@@ -1,7 +1,8 @@
 using UnityEngine;
 
-public class Peashooter : MonoBehaviour
+public class OffensivePlantTypeA : MonoBehaviour
 {
+    [Header("Straight line attacking plants")]
     [SerializeField] Plant plant;
     [SerializeField] GameObject projectilePrefab;
 
@@ -14,6 +15,8 @@ public class Peashooter : MonoBehaviour
     Collider2D hitboxCollider;
 
     DetectZombieInLane detectZombie;
+
+    GameObject projectileHolder;//Remove when done
     private void Awake()
     {
         fireRate = (plant as PeashooterClass).FireRate;
@@ -23,6 +26,8 @@ public class Peashooter : MonoBehaviour
         animator = GetComponent<Animator>();
 
         gameObject.GetComponent<SpriteRenderer>().sprite = (plant as PeashooterClass).PlantDisplaySprite;
+
+        projectileHolder = GameObject.FindWithTag("ProjectileHolder");
 
         hitboxCollider = transform.GetChild(1).GetComponent<Collider2D>();
         detectZombie = transform.GetChild(2).GetComponent<DetectZombieInLane>();
@@ -54,6 +59,9 @@ public class Peashooter : MonoBehaviour
         OnMove();//Remove this later
 
         GameObject projectile = Instantiate(projectilePrefab, projectilePosition, Quaternion.identity);
+
+        projectile.transform.SetParent(projectileHolder.transform); //Remove when done
+
         Destroy(projectile, 5f);
     }
 }

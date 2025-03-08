@@ -12,7 +12,12 @@ public class Horizontal_Projectile : MonoBehaviour
         if (collision.gameObject.CompareTag("Zombie"))
         {
             //collision.gameObject.GetComponent<Zombie>().TakeDamage(1);
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+        }
+
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            gameObject.SetActive(false);
         }
     }
 }

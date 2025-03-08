@@ -7,10 +7,9 @@ TagManager:
   - Zombie
   - PlantHolder
   - Plant
-  - ZombieHolder
-  - ProjectileHolder
   - GameManager
   - SunCounter
+  - Wall
   layers:
   - Default
   - TransparentFX

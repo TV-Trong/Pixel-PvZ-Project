@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 4756414707789101944}
   - component: {fileID: 7386353644699951133}
   m_Layer: 0
-  m_Name: Repeater
+  m_Name: Snow Pea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -230,9 +230,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9c592f63f8ce684db55bdb952d81bbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plant: {fileID: 11400000, guid: 37fd0e9341e46a745b9b7710b49cb0d2, type: 2}
-  projectilePrefab: {fileID: 7107016578544799615, guid: 3aa6e8a7e665a1b4b8f8a36122d1d994, type: 3}
-  animatorOverrideController: {fileID: 22100000, guid: eea709c74809bd243a12c759a0b9328b, type: 2}
+  plant: {fileID: 11400000, guid: 7596bd519b240e44a8ded779c2afde86, type: 2}
+  projectilePrefab: {fileID: 2579278606964244597, guid: 38c79c964d23cff4dbbd5cc1fd66e23f, type: 3}
+  animatorOverrideController: {fileID: 22100000, guid: 258eaf92fc9dd914eb25f20bb1665504, type: 2}
 --- !u!1 &8664115619344519407
 GameObject:
   m_ObjectHideFlags: 0

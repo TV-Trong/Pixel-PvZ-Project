@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Repeater Override
+  m_Controller: {fileID: 9100000, guid: eb3600d7703d5c542b5c79da3048370d, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: f5b23786ee0bb264ea22b48da6425ef8, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 778016fcf81718a4ba069d81742b20d5, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: c8424d4d3b49ac1468161803411ab87f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ce768ee406e88d648b7d4bc139842e04, type: 2}

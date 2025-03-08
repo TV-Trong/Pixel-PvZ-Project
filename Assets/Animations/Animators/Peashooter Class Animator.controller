@@ -71,7 +71,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 778016fcf81718a4ba069d81742b20d5, type: 2}
+  m_Motion: {fileID: 7400000, guid: f5b23786ee0bb264ea22b48da6425ef8, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -83,7 +83,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Peashooter Class
+  m_Name: Peashooter Class Animator
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Shoot
@@ -148,7 +148,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: ce768ee406e88d648b7d4bc139842e04, type: 2}
+  m_Motion: {fileID: 7400000, guid: c8424d4d3b49ac1468161803411ab87f, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

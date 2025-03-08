@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2350ef579d3cfbb40a0f842efa896161, type: 3}
-  m_Name: Repeater
+  m_Name: Snow Pea
   m_EditorClassIdentifier: 
-  plantName: Repeater
-  sunCost: 200
+  plantName: Snow Pea
+  sunCost: 175
   plantHealth: 100
   plantCooldown: 5
   plantType: 1
   plantClass: 0
-  plantDisplaySprite: {fileID: -1191870878, guid: b9e02d7584a48ad4c96504f297d6141f, type: 3}
+  plantDisplaySprite: {fileID: 660351091, guid: ee1332c4805e3ca48b3593bf9cbb0e43, type: 3}
   fireRate: 2

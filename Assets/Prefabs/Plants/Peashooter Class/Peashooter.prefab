@@ -186,15 +186,15 @@ SpriteRenderer:
   m_SortingLayerID: -1791398971
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 2c085f01e2c8e4e44a5a8b46d66f876a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.3333334, y: 1.3333334}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
 --- !u!95 &4756414707789101944
@@ -230,9 +230,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9c592f63f8ce684db55bdb952d81bbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  discription: Straight line attacking pattern
   plant: {fileID: 11400000, guid: 96bb2987087283c40946794636132f42, type: 2}
-  projectilePrefab: {fileID: 7107016578544799615, guid: 3aa6e8a7e665a1b4b8f8a36122d1d994, type: 3}
+  animatorOverrideController: {fileID: 0}
+  projectileType: 0
 --- !u!1 &8664115619344519407
 GameObject:
   m_ObjectHideFlags: 0

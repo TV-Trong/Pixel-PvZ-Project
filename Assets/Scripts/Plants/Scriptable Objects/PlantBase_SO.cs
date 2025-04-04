@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class Plant : ScriptableObject
+public abstract class PlantBase_SO : ScriptableObject
 {
     [SerializeField] protected string plantName;
     [SerializeField] protected int sunCost;

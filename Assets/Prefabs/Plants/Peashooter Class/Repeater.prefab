@@ -233,6 +233,7 @@ MonoBehaviour:
   plant: {fileID: 11400000, guid: 37fd0e9341e46a745b9b7710b49cb0d2, type: 2}
   projectilePrefab: {fileID: 7107016578544799615, guid: 3aa6e8a7e665a1b4b8f8a36122d1d994, type: 3}
   animatorOverrideController: {fileID: 22100000, guid: eea709c74809bd243a12c759a0b9328b, type: 2}
+  projectileType: 0
 --- !u!1 &8664115619344519407
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,9 +3,9 @@ using UnityEngine;
 public class OffensivePlantTypeA : MonoBehaviour
 {
     [Header("Straight line attacking plants")]
-    [SerializeField] protected Plant plant;
-    [SerializeField] protected GameObject projectilePrefab;
+    [SerializeField] protected PlantBase_SO plant;
     [SerializeField] protected AnimatorOverrideController animatorOverrideController;
+    [SerializeField] protected PlantProjectileType projectileType;
 
     protected float fireRate;
 
@@ -16,15 +16,16 @@ public class OffensivePlantTypeA : MonoBehaviour
     protected Collider2D hitboxCollider;
     
     protected DetectZombieInLane detectZombie;
+
     protected void Awake()
     {
-        fireRate = (plant as PeashooterClass).FireRate;
+        fireRate = (plant as PeashooterPlants_SO).FireRate;
 
         projectilePosition = transform.GetChild(0).position;
 
         animator = GetComponent<Animator>();
 
-        gameObject.GetComponent<SpriteRenderer>().sprite = (plant as PeashooterClass).PlantDisplaySprite;
+        gameObject.GetComponent<SpriteRenderer>().sprite = (plant as PeashooterPlants_SO).PlantDisplaySprite;
 
         hitboxCollider = transform.GetChild(1).GetComponent<Collider2D>();
         detectZombie = transform.GetChild(2).GetComponent<DetectZombieInLane>();
@@ -35,12 +36,12 @@ public class OffensivePlantTypeA : MonoBehaviour
 
     protected void OnEnable()
     {
-        InvokeRepeating("ShootTrigger", 0, fireRate);
+        InvokeRepeating(nameof(ShootTrigger), 0, fireRate);
     }
 
     protected void OnDisable()
     {
-        CancelInvoke("ShootTrigger");
+        CancelInvoke(nameof(ShootTrigger));
     }
 
     protected void ShootTrigger()
@@ -51,7 +52,9 @@ public class OffensivePlantTypeA : MonoBehaviour
 
     protected virtual void Shoot()
     {
-        GameObject projectile = GameManager.instance.GetPooledObject(0); //Change later
+        GameObject projectile = PoolingSystem.instance.GetPooledObjects(projectileType.ToString()); //Change later
+        if (projectile == null)
+            return;
 
         projectile.SetActive(true);
         projectile.transform.position = projectilePosition;

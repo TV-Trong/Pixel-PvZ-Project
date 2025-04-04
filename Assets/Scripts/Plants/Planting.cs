@@ -30,6 +30,8 @@ public class Planting : MonoBehaviour
 
                 GameObject newPlant = Instantiate(plantPrefab, gridManager.GetWorldPosition(mousePosition), Quaternion.identity);// Change to pooling later
 
+                newPlant.layer = LayerMask.NameToLayer("Ignore Raycast");
+
                 newPlant.transform.SetParent(plantHolder.transform);//Remove when done
 
                 gridManager.UpdateGrid(mousePosition, true);

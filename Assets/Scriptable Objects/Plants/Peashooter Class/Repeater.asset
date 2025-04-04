@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2350ef579d3cfbb40a0f842efa896161, type: 3}
+  m_Script: {fileID: 11500000, guid: 86f2fa119404c3246a215b57c186d65b, type: 3}
   m_Name: Repeater
   m_EditorClassIdentifier: 
   plantName: Repeater
@@ -18,5 +18,5 @@ MonoBehaviour:
   plantCooldown: 5
   plantType: 1
   plantClass: 0
-  plantDisplaySprite: {fileID: -1191870878, guid: b9e02d7584a48ad4c96504f297d6141f, type: 3}
+  plantDisplaySprite: {fileID: 21300000, guid: 6243fdcabc0144c42bb3e5686b6bcbc6, type: 3}
   fireRate: 2

@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class PlantChoosing : MonoBehaviour
 {
-    [SerializeField] Plant choosenPlant;
+    [SerializeField] PlantBase_SO choosenPlant;
     [SerializeField] Image displayImage;
     [SerializeField] TextMeshProUGUI sunCostTMP;
     [SerializeField] GameObject seedCover;

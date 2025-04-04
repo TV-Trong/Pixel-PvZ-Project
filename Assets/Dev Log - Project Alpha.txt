@@ -33,3 +33,6 @@ To do next:
 	- Sunflower pls
 	- Sun drop system
 	- Remove plant with shovel
+03/04/2025
+	- Pooled different plant projectile, using Dictionary to get string to pooled object
+	- Added base zombie script that can be inherit to make more zombies

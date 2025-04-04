@@ -2,9 +2,9 @@ using UnityEngine;
 
 
 [CreateAssetMenu(fileName = "New Peashooter", menuName = "Create New Plant/Offensive/Peashooter Class")]
-public class PeashooterClass : Plant
+public class PeashooterPlants_SO : PlantBase_SO
 {
-    [SerializeField] protected float fireRate;
+    [SerializeField] protected float fireRate = 2f;
     private void Awake()
     {
         plantType = PlantType.Offensive;
@@ -13,7 +13,6 @@ public class PeashooterClass : Plant
         plantHealth = 100;
         plantName = "Peashooter";
         sunCost = 100;
-        fireRate = 2f;
     }
 
     public float FireRate { get { return fireRate; } protected set { fireRate = value; } }

@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class PoolingSystem : MonoBehaviour
 {
-    public List<ObjectToPool> objectToPool = new List<ObjectToPool>();
+    public static PoolingSystem instance;
+
+    [SerializeField] List<ObjectToPool> objectToPool = new List<ObjectToPool>();
+    Dictionary<string, ObjectToPool> stringToPoolDict = new Dictionary<string, ObjectToPool>();
 
     private void Awake()
     {
+        instance = this;
+
         foreach (ObjectToPool pooledObject in objectToPool)
         {
+            stringToPoolDict[pooledObject.objectName] = pooledObject;
+
             for (int i = 0; i < pooledObject.amount; i++)
             {
                 GameObject newObject = Instantiate(pooledObject.objectPrefab);
@@ -20,12 +27,15 @@ public class PoolingSystem : MonoBehaviour
         }
     }
 
-    public GameObject GetPooledObjects(int index)
+    public GameObject GetPooledObjects(string poolName)
     {
-        for (int i = 0; i < objectToPool[index].listObject.Count; i++)
+        for (int i = 0; i < stringToPoolDict[poolName].listObject.Count; i++)
         {
-            if (!objectToPool[index].listObject[i].activeInHierarchy) return objectToPool[index].listObject[i];
+            if (!stringToPoolDict[poolName].listObject[i].activeInHierarchy) 
+                return stringToPoolDict[poolName].listObject[i];
         }
+
+        Debug.LogWarning("Pool not large enough!");
         return null;
     }
 }
@@ -34,6 +44,7 @@ public class PoolingSystem : MonoBehaviour
 public class ObjectToPool
 {
     public GameObject objectPrefab;
+    public string objectName;
     public int amount;
     public Transform holder;
     [HideInInspector] public List<GameObject> listObject = new List<GameObject>();

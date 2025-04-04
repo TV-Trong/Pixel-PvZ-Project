@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] PoolingSystem poolingSystem;
 
     TextMeshProUGUI sunCounter;
-    Plant chosenPlant;
+    PlantBase_SO chosenPlant;
     int sunCost;
     GameObject seedCover;
 
@@ -64,7 +64,13 @@ public class GameManager : MonoBehaviour
         currentSun = amount;
     }
 
-    public void GetChosenPlant(Plant plant, GameObject coverObject)
+    public void GainSun(int amount)
+    {
+        currentSun += amount;
+        sunCounter.text = currentSun.ToString();
+    }
+
+    public void GetChosenPlant(PlantBase_SO plant, GameObject coverObject)
     {
         chosenPlant = plant;
         sunCost = plant.SunCost;
@@ -106,11 +112,6 @@ public class GameManager : MonoBehaviour
         sunCounter.text = currentSun.ToString();
 
         RemoveChosenPlant();
-    }
-
-    public GameObject GetPooledObject(int index)
-    {
-        return poolingSystem.GetPooledObjects(index);
     }
 }
 

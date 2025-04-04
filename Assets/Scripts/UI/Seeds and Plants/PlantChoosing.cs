@@ -4,10 +4,14 @@ using UnityEngine.UI;
 
 public class PlantChoosing : MonoBehaviour
 {
+    #region Setup
+
     [SerializeField] PlantBase_SO choosenPlant;
     [SerializeField] Image displayImage;
     [SerializeField] TextMeshProUGUI sunCostTMP;
     [SerializeField] GameObject seedCover;
+
+    #endregion
 
     private void Start()
     {

@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    #region Setup
+
     public static GameManager instance;
 
     public GameState gameState; //Change later
@@ -15,9 +17,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] PoolingSystem poolingSystem;
 
     TextMeshProUGUI sunCounter;
+
     PlantBase_SO chosenPlant;
+
     int sunCost;
+
     GameObject seedCover;
+
+    #endregion
 
     private void Awake()
     {
@@ -34,11 +41,19 @@ public class GameManager : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            SunCollecting();
+        }
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (gameState == GameState.MainMenu)
         {
-            
+
         }
         else if (gameState == GameState.InGame)
         {
@@ -55,11 +70,25 @@ public class GameManager : MonoBehaviour
         }
         else if (gameState == GameState.GameOver)
         {
-            
+
         }
     }
 
-    void StartingSun(int amount) //Call later
+    private void SunCollecting()
+    {
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        var hit = Physics2D.OverlapPoint(mousePosition, LayerMask.GetMask("Sun"));
+
+        if (hit != null)
+        {
+            var sun = hit.GetComponent<SunBehaviour>();
+            GainSun(sun.GetSun());
+            sun.gameObject.SetActive(false);
+        }
+    }
+
+    private void StartingSun(int amount) //Call later
     {
         currentSun = amount;
     }

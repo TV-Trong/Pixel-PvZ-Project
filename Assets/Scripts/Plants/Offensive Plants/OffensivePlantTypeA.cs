@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class OffensivePlantTypeA : MonoBehaviour
 {
+    #region Setup
+
     [Header("Straight line attacking plants")]
     [SerializeField] protected PlantBase_SO plant;
     [SerializeField] protected AnimatorOverrideController animatorOverrideController;
@@ -12,10 +14,12 @@ public class OffensivePlantTypeA : MonoBehaviour
     protected Vector3 projectilePosition;
 
     protected Animator animator;
-    
+
     protected Collider2D hitboxCollider;
-    
+
     protected DetectZombieInLane detectZombie;
+
+    #endregion
 
     protected void Awake()
     {

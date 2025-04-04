@@ -4,7 +4,6 @@ public class CheckGridPosition : MonoBehaviour
 {
     public GridManager gridManager;
 
-
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))

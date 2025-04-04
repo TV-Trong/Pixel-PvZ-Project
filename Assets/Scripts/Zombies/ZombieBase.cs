@@ -3,19 +3,25 @@ using UnityEngine;
 
 public class ZombieBase : MonoBehaviour
 {
-    #region Setup Properties
+    #region Properties
+
     protected string zombieName;
     protected int zombieHealth;
     protected int zombieDamage;
     protected float attackSpeed;
     protected float zombieSpeed;
+
     #endregion
+
+    #region Setup
 
     [SerializeField] protected ZombieProperties_SO zombieProperties;
     [SerializeField] protected Rigidbody2D rb;
     [SerializeField] protected SpriteRenderer sr;
 
     protected Coroutine chilledCoroutine;
+
+    #endregion
 
     protected void Awake()
     {
@@ -54,7 +60,7 @@ public class ZombieBase : MonoBehaviour
             chilledCoroutine = StartCoroutine(StartSlow());
     }
 
-    IEnumerator StartSlow()
+    protected IEnumerator StartSlow()
     {
         rb.velocity = new Vector2(-zombieSpeed / 2, 0);
         sr.color = Color.blue;

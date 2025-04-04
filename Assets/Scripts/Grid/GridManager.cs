@@ -4,11 +4,15 @@ using UnityEngine.Tilemaps;
 
 public class GridManager : MonoBehaviour
 {
+    #region Setup
+
     [SerializeField] Tilemap tilemap;
     [SerializeField] int gridWidth;
     [SerializeField] int gridHeight;
 
     Dictionary<Vector3Int, bool> occupiedGrid = new Dictionary<Vector3Int, bool>();
+
+    #endregion
 
     private void Awake()
     {

@@ -2,10 +2,14 @@ using UnityEngine;
 
 public class PlantProjectileBase : MonoBehaviour
 {
+    #region Setup
+
     public const int baseDamge = 10;
 
     [HideInInspector] public PlantProjectileType projectileType;
     [HideInInspector] public float damageAmp = 1;
+
+    #endregion
 
     protected virtual void Awake()
     {

@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class PoolingSystem : MonoBehaviour
 {
+    #region Setup
+
     public static PoolingSystem instance;
 
     [SerializeField] List<ObjectToPool> objectToPool = new List<ObjectToPool>();
     Dictionary<string, ObjectToPool> stringToPoolDict = new Dictionary<string, ObjectToPool>();
+
+    #endregion
 
     private void Awake()
     {

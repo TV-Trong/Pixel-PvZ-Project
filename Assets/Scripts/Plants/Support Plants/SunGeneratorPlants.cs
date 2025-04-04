@@ -1,9 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SunGeneratorPlants : MonoBehaviour
 {
+    #region Setup
+
     [Header("Straight line attacking plants")]
     [SerializeField] protected PlantBase_SO plant;
     [SerializeField] protected AnimatorOverrideController animatorOverrideController;
@@ -15,6 +15,8 @@ public class SunGeneratorPlants : MonoBehaviour
     protected Collider2D hitboxCollider;
 
     protected float sunGenerationRate;
+
+    #endregion
 
     protected void Awake()
     {
@@ -33,7 +35,6 @@ public class SunGeneratorPlants : MonoBehaviour
     protected void OnEnable()
     {
         var initTime = Random.Range(5, sunGenerationRate);
-        Debug.Log(initTime);
         InvokeRepeating(nameof(TriggerSunGenerating), initTime, sunGenerationRate);
     }
 

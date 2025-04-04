@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8904185650174426049}
   - component: {fileID: -1064455328009930397}
   - component: {fileID: -3294947673123859238}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 2
   m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!114 &-3294947673123859238
@@ -165,4 +165,4 @@ MonoBehaviour:
   rb: {fileID: -1064455328009930397}
   force: 3.5
   minFallingTime: 0.8
-  maxFallingTime: 1.4
+  maxFallingTime: 1.2

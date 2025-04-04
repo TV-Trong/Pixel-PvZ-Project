@@ -2,11 +2,15 @@ using UnityEngine;
 
 public class Planting : MonoBehaviour
 {
+    #region Setup
+
     [SerializeField] GridManager gridManager;
 
     GameManager gameManager;
 
-    GameObject plantHolder;//Remove when done
+    GameObject plantHolder;
+
+    #endregion
 
     private void Start()
     {
@@ -32,7 +36,7 @@ public class Planting : MonoBehaviour
 
                 newPlant.layer = LayerMask.NameToLayer("Ignore Raycast");
 
-                newPlant.transform.SetParent(plantHolder.transform);//Remove when done
+                newPlant.transform.SetParent(plantHolder.transform);
 
                 gridManager.UpdateGrid(mousePosition, true);
 

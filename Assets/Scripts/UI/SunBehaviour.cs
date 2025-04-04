@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class SunBehaviour : MonoBehaviour
 {
+    #region Setup
+
     [SerializeField] int sunAmount = 25;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] float force;
@@ -12,14 +14,7 @@ public class SunBehaviour : MonoBehaviour
     float timer;
     bool isStopFalling;
 
-    private void OnMouseDown()
-    {
-        if (GameManager.instance.gameState == GameState.InGame)
-        {
-            GameManager.instance.GainSun(sunAmount);
-            gameObject.SetActive(false);
-        }
-    }
+    #endregion
 
     private void OnEnable()
     {
@@ -45,5 +40,10 @@ public class SunBehaviour : MonoBehaviour
     {
         isStopFalling = false;
         timer = 0;
+    }
+
+    public int GetSun()
+    {
+        return sunAmount;
     }
 }

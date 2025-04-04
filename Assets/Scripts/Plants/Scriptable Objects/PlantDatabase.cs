@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlantDatabase : ScriptableObject
 {
     public List<GameObject> plantPrefabs;
+
     public GameObject GetPlantPrefab(string plantName)
     {
         foreach (GameObject plant in plantPrefabs)

@@ -1,18 +1,28 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "PlantDatabase", menuName = "Create Plant Database")]
 public class PlantDatabase : ScriptableObject
 {
-    public List<GameObject> plantPrefabs;
+    public List<PlantDataList> plantDataList;
 
     public GameObject GetPlantPrefab(string plantName)
     {
-        foreach (GameObject plant in plantPrefabs)
+        foreach (var plant in plantDataList)
         {
-            if (plant.name == plantName)
-                return plant;
+            if (plant.plantName == plantName)
+                return plant.plantPrefab;
         }
         return null;
     }
+}
+
+
+[Serializable]
+public class PlantDataList
+{
+    public string plantName;
+    public GameObject plantPrefab;
+    public PlantBase_SO plantData;
 }

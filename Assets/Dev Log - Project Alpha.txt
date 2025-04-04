@@ -38,3 +38,8 @@
 	To do next:
 	- Natural sun drop
 	- Remove plant with shovel
+04/04/2025
+	- Fixed sun collecting bug
+	- Cleaned up code
+	- Adjusted plant database for better optimization
+	- Added seed slot selection system

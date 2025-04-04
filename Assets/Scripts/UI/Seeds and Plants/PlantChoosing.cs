@@ -13,12 +13,7 @@ public class PlantChoosing : MonoBehaviour
 
     #endregion
 
-    private void Start()
-    {
-        SetupPlantUI();
-    }
-
-    void SetupPlantUI()
+    public void SetupPlantUI()
     {
         GetComponent<Button>().onClick.AddListener(SelectPlant);
 
@@ -32,5 +27,10 @@ public class PlantChoosing : MonoBehaviour
     {
         GameManager.instance.GetChosenPlant(choosenPlant, seedCover);
         seedCover.SetActive(true);
+    }
+
+    public void SetPlant(PlantBase_SO plant)
+    {
+        choosenPlant = plant;
     }
 }

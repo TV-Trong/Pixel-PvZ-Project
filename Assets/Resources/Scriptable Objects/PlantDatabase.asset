@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14a97af93757cd04a8136ef455f48033, type: 3}
+  m_Name: PlantDatabase
+  m_EditorClassIdentifier: 
+  plantDataList:
+  - plantName: Peashooter
+    plantPrefab: {fileID: 5986023997266967389, guid: 0263160cdf4bc664e9f23bc1666cd16e, type: 3}
+    plantData: {fileID: 11400000, guid: 96bb2987087283c40946794636132f42, type: 2}
+  - plantName: Sunflower
+    plantPrefab: {fileID: 7465002003775478710, guid: f5ccf3ceb4093eb4093a78f201f080fc, type: 3}
+    plantData: {fileID: 11400000, guid: 8f77df9468d6f5f4987f9bb234fe68fa, type: 2}
+  - plantName: Repeater
+    plantPrefab: {fileID: 5986023997266967389, guid: 96b7a265f4385414da35e651c93bac6a, type: 3}
+    plantData: {fileID: 11400000, guid: 37fd0e9341e46a745b9b7710b49cb0d2, type: 2}
+  - plantName: Snow Pea
+    plantPrefab: {fileID: 5986023997266967389, guid: 4ebf3053b1acc9340a786f6514de07ec, type: 3}
+    plantData: {fileID: 11400000, guid: 7596bd519b240e44a8ded779c2afde86, type: 2}

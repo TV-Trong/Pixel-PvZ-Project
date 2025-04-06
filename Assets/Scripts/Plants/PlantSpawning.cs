@@ -1,22 +1,20 @@
 using UnityEngine;
 
-public class Planting : MonoBehaviour
+public class PlantSpawning : MonoBehaviour
 {
     #region Setup
 
     [SerializeField] GridManager gridManager;
 
-    GameManager gameManager;
+    [SerializeField] GameObject plantHolder;
 
-    GameObject plantHolder;
+    GameManager gameManager;
 
     #endregion
 
     private void Start()
     {
         gameManager = GameManager.instance;
-
-        plantHolder = GameObject.FindWithTag("PlantHolder");
     }
 
     private void Update()
@@ -45,7 +43,7 @@ public class Planting : MonoBehaviour
 
             if (Input.GetMouseButtonDown(1))
             {
-                gameManager.RemoveChosenPlant();
+                gameManager.RemoveHoldingPlant();
             }
         }
     }

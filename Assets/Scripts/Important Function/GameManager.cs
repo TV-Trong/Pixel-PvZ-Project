@@ -8,13 +8,13 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
 
-    public GameState gameState; //Change later
+    public GameState gameState;
 
     [SerializeField] PlantDatabase plantDatabase;
 
-    [SerializeField] int currentSun;
+    [SerializeField] int startingSun = 100;
 
-    [SerializeField] PoolingSystem poolingSystem;
+    int currentSun;
 
     TextMeshProUGUI sunCounter;
 
@@ -39,6 +39,8 @@ public class GameManager : MonoBehaviour
         }
 
         SceneManager.sceneLoaded += OnSceneLoaded;
+
+        plantDatabase.Initialize();
     }
 
     private void Update()
@@ -55,18 +57,19 @@ public class GameManager : MonoBehaviour
         {
 
         }
-        else if (gameState == GameState.InGame)
+        else if (gameState == GameState.PlantChoosing)
         {
             sunCounter = GameObject.FindWithTag("SunCounter").GetComponentInChildren<TextMeshProUGUI>();
+
+            currentSun = startingSun;
+
+            sunCounter.text = currentSun.ToString();
 
             if (sunCounter == null)
             {
                 Debug.LogWarning("Sun Counter not found!");
                 return;
             }
-
-            sunCounter.text = currentSun.ToString();
-
         }
         else if (gameState == GameState.GameOver)
         {
@@ -88,18 +91,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void StartingSun(int amount) //Call later
-    {
-        currentSun = amount;
-    }
-
     public void GainSun(int amount)
     {
         currentSun += amount;
         sunCounter.text = currentSun.ToString();
     }
 
-    public void GetChosenPlant(PlantBase_SO plant, GameObject coverObject)
+    public void GetHoldingPlant(PlantBase_SO plant, GameObject coverObject)
     {
         chosenPlant = plant;
         sunCost = plant.SunCost;
@@ -111,7 +109,7 @@ public class GameManager : MonoBehaviour
         return plantDatabase.GetPlantPrefab(chosenPlant.PlantName);
     }
 
-    public void RemoveChosenPlant()
+    public void RemoveHoldingPlant()
     {
         chosenPlant = null;
         sunCost = 0;
@@ -140,13 +138,14 @@ public class GameManager : MonoBehaviour
         currentSun -= sunCost;
         sunCounter.text = currentSun.ToString();
 
-        RemoveChosenPlant();
+        RemoveHoldingPlant();
     }
 }
 
 public enum GameState
 {
     MainMenu,
+    PlantChoosing,
     InGame,
     GameOver
 }

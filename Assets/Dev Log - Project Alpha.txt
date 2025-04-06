@@ -35,11 +35,18 @@
 	- Drew sunflower active animation
 	- Added sunflower with sun drop system
 	- Added sun behavior that can be collected and update sun counter
-	To do next:
-	- Natural sun drop
-	- Remove plant with shovel
+
 04/04/2025
 	- Fixed sun collecting bug
 	- Cleaned up code
 	- Adjusted plant database for better optimization
 	- Added seed slot selection system
+
+06/04/2025
+	- Completeed seed choosing system
+	- Clairified some names
+	
+	To-do:
+	- Natural sun drop
+	- Pool the plants
+	- Remove plant with shovel

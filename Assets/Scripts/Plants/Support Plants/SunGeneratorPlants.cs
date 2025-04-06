@@ -9,6 +9,7 @@ public class SunGeneratorPlants : MonoBehaviour
     [SerializeField] protected AnimatorOverrideController animatorOverrideController;
     [SerializeField] protected GameObject sunPrefab;
     [SerializeField] protected Transform sunDropPoint;
+    [SerializeField] protected float initialSunSpawnInterval = 5f;
 
     protected Animator animator;
 
@@ -18,7 +19,7 @@ public class SunGeneratorPlants : MonoBehaviour
 
     #endregion
 
-    protected void Awake()
+    protected void SetupPlant()
     {
         sunGenerationRate = (plant as SunGenerator_SO).SunGenerationRate;
 
@@ -34,8 +35,11 @@ public class SunGeneratorPlants : MonoBehaviour
 
     protected void OnEnable()
     {
-        var initTime = Random.Range(5, sunGenerationRate);
-        InvokeRepeating(nameof(TriggerSunGenerating), initTime, sunGenerationRate);
+        SetupPlant();
+
+        var initialSunSpawn = Random.Range(initialSunSpawnInterval, sunGenerationRate / 2);
+
+        InvokeRepeating(nameof(TriggerSunGenerating), initialSunSpawn, sunGenerationRate);
     }
 
     protected void OnDisable()
@@ -54,7 +58,8 @@ public class SunGeneratorPlants : MonoBehaviour
         if (sun == null)
             return;
 
-        sun.SetActive(true);
         sun.transform.position = sunDropPoint.position;
+        sun.GetComponent<SunBehaviour>().SetSunType(SunBehaviour.SunType.PlantGenerated);
+        sun.SetActive(true);
     }
 }

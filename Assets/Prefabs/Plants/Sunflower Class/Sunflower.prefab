@@ -233,3 +233,4 @@ MonoBehaviour:
   animatorOverrideController: {fileID: 0}
   sunPrefab: {fileID: 846685219443525393, guid: fe8cf2072dfa0e547945f21738ad1f86, type: 3}
   sunDropPoint: {fileID: 9029555778861001374}
+  initialSunSpawnInterval: 2

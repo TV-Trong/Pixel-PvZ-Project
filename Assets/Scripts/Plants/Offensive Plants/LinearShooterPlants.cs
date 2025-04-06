@@ -7,6 +7,7 @@ public class LinearShooterPlants : MonoBehaviour
     [SerializeField] protected PlantBase_SO plant;
     [SerializeField] protected AnimatorOverrideController animatorOverrideController;
     [SerializeField] protected PlantProjectileType projectileType;
+    [SerializeField] protected float minFireRateInterval;
 
     protected float fireRate;
 
@@ -20,7 +21,7 @@ public class LinearShooterPlants : MonoBehaviour
 
     #endregion
 
-    protected void Awake()
+    protected void SetupPlant()
     {
         fireRate = (plant as PeashooterPlants_SO).FireRate;
 
@@ -39,7 +40,10 @@ public class LinearShooterPlants : MonoBehaviour
 
     protected void OnEnable()
     {
-        InvokeRepeating(nameof(ShootTrigger), 0, fireRate);
+        SetupPlant();
+
+        float initialShot = Random.Range(minFireRateInterval, fireRate);
+        InvokeRepeating(nameof(ShootTrigger), initialShot, fireRate);
     }
 
     protected void OnDisable()

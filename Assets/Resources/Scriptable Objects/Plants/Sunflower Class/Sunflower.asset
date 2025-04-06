@@ -15,7 +15,8 @@ MonoBehaviour:
   plantName: Sunflower
   sunCost: 50
   plantHealth: 100
-  plantCooldown: 5
+  plantCooldown: 7.5
+  initialCooldown: 0.5
   plantType: 0
   plantClass: 1
   plantDisplaySprite: {fileID: 21300000, guid: c275215406c9c1645ba34c75d54680a6, type: 3}

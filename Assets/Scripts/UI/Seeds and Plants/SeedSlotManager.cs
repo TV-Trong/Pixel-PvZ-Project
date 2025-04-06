@@ -3,11 +3,14 @@ using UnityEngine;
 
 public class SeedSlotManager : MonoBehaviour
 {
+    #region Setup
+
     [SerializeField] PlantDatabase plantDatabase;
     [SerializeField] List<GameObject> seedSlots;
 
-    //For debugging
     public List<int> chosenPlantsID = new List<int>();
+
+    #endregion
 
     public void UpdateChosenPlant()
     {

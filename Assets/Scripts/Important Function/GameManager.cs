@@ -10,24 +10,27 @@ public class GameManager : MonoBehaviour
 
     public GameState gameState;
 
+    [Header("Application Seting")]
+
+    [SerializeField] int targetFrameRate = 30;
+    [SerializeField] int frameSkip = 1;
+
+    [Header("Game Setup")]
+
     [SerializeField] PlantDatabase plantDatabase;
-
     [SerializeField] int startingSun = 100;
-
-    int currentSun;
-
     TextMeshProUGUI sunCounter;
-
     PlantBase_SO chosenPlant;
-
-    int sunCost;
-
     GameObject seedCover;
+    int sunCost;
+    int currentSun;
 
     #endregion
 
     private void Awake()
     {
+        Application.targetFrameRate = targetFrameRate;
+
         if (instance == null)
         {
             instance = this;
@@ -75,6 +78,11 @@ public class GameManager : MonoBehaviour
         {
 
         }
+    }
+
+    public int GetFrameSkip()
+    {
+        return frameSkip;
     }
 
     private void SunCollecting()

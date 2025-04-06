@@ -15,8 +15,9 @@ MonoBehaviour:
   plantName: Snow Pea
   sunCost: 175
   plantHealth: 100
-  plantCooldown: 5
+  plantCooldown: 7.5
+  initialCooldown: 0.5
   plantType: 1
   plantClass: 0
   plantDisplaySprite: {fileID: 21300000, guid: da888fad3bf33db489d9adb9537da564, type: 3}
-  fireRate: 2
+  fireRate: 1.5

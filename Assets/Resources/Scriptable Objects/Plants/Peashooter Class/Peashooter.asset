@@ -15,8 +15,9 @@ MonoBehaviour:
   plantName: Peashooter
   sunCost: 100
   plantHealth: 100
-  plantCooldown: 5
+  plantCooldown: 7.5
+  initialCooldown: 0.5
   plantType: 1
   plantClass: 0
   plantDisplaySprite: {fileID: 21300000, guid: 2c085f01e2c8e4e44a5a8b46d66f876a, type: 3}
-  fireRate: 2
+  fireRate: 1.5

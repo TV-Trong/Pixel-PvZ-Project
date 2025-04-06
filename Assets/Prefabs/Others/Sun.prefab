@@ -161,8 +161,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ff1a1e8b55ae4d4397e1d80c418e4c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sunAmount: 25
   rb: {fileID: -1064455328009930397}
+  sr: {fileID: 3701029761887420992}
+  sunAmount: 25
   force: 3.5
-  minFallingTime: 0.8
-  maxFallingTime: 1.2
+  lifeTimeAfterStopFalling: 10
+  fadingTime: 3
+  plantGenerated_minFallingTime: 0.8
+  plantGenerated_maxFallingTime: 0.85
+  plantGenerated_sunGravity: 1
+  sunOffset: 0.15
+  naturalGenerated_minFallingTime: 5
+  naturalGenerated_maxFallingTime: 7.6
+  naturalGenerated_sunGravity: 0.03

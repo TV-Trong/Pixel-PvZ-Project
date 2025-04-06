@@ -38,6 +38,7 @@ public class PlantChoosingMenu : MonoBehaviour
     void StartGame()
     {
         GameManager.instance.gameState = GameState.InGame;
+        FindFirstObjectByType<SunSpawner>().StartSpawningSun();
         gameObject.SetActive(false);
     }
 
